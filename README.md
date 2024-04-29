@@ -9,7 +9,7 @@
   <h3 align="center">MarkerPulse-Tracker An Ecom Price Tracking Application</h3>
 
    <div align="center">
-     Built this project from start to finish for my final portfolio poject. 
+     Built this project from start to finish for our final portfolio poject at ALX. 
     </div>
 </div>
 
@@ -791,4 +791,7 @@ export const formatNumber = (num: number = 0) => {
 
 Assets used in the project are [here](https://drive.google.com/file/d/1v6h993BgYX6axBoIXFbZ9HQAgqbR4PSH/view?usp=sharing)
 
+## <a name="contributors">🔗 contributors</a>
+DEVHYDAR01 - [Github] (https://github.com/DEVHYDAR01)
+Pecjane - [Github] (https://github.com/Pecjane)
 #
