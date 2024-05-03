@@ -32,7 +32,6 @@ export async function scrapeAmazonProduct(url: string) {
       $('.priceToPay span.a-price-whole'),
       $('.a.size.base.a-color-price'),
       $('.a-button-selected .a-color-base'),
-      $('.a-offscreen')
     );
 
     const originalPrice = extractPrice(
@@ -48,13 +47,29 @@ export async function scrapeAmazonProduct(url: string) {
     const images = 
       $('#imgBlkFront').attr('data-a-dynamic-image') || 
       $('#landingImage').attr('data-a-dynamic-image') ||
-      {}
+      '{}'
 
     const imageUrls = Object.keys(JSON.parse(images));
 
     const currency = extractCurrency($('.a-price-symbol'))
-
-    console.log( {title, currentPrice, originalPrice, outOfStock, imageUrls} )  
+    const discountRate = $('.reinventPriceSavingsPercentageMargin.savingsPercentage').text().replace(/[-%]/g, "");
+    //construct data obeject with scraped information
+    const data = {
+      url,
+      currency: currency || '$',
+      image: imageUrls[0],
+      title,
+      currentPrice: Number(currentPrice),
+      originalPrice: Number(originalPrice),
+      priceHistory: [],
+      discountRate: Number(discountRate),
+      category: 'category',
+      reviewsCount: 100,
+      stars: 4.5,
+      isOutOfStock: outOfStock,
+    }
+    console.log(data);
+    // console.log( {title, currentPrice, originalPrice, outOfStock, imageUrls, currency, discountRate} )  
   } 
   catch (error: any) {
     throw new Error(`Failed to product: ${error.message}`)
