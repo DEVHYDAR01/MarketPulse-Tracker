@@ -1,16 +1,18 @@
 import { Product } from "@/types";
-import { getProductById } from "@/lib/actions"
+import { getProductById, getSimilarProducts } from "@/lib/actions"
 import Image from "next/image";
 import Link from "next/link";
 import { formatNumber } from "@/lib/utils";
 import PriceInfoCard from "@/components/PriceInfoCard";
+import Modal from "@/components/Modal";
+
 
 
 type Props = {
     params: { id: string }
 }
 
-const ProductDetails = ({ params: { id } }: Props) => {
+const ProductDetails = async ({ params: { id } }: Props) => {
     const product: Product = await getProductById(id);
 
     if(!product) redirect('/')
@@ -165,7 +167,7 @@ const ProductDetails = ({ params: { id } }: Props) => {
       </div>
 
       <button className="btn w-fit mx-auto flex items-center justify-center gap-3 min-w-[200px]">
-        <Imageage 
+        <Image 
           src="/assets/icons/bag.svg"
           alt="check"
           width={22}
@@ -184,7 +186,7 @@ const ProductDetails = ({ params: { id } }: Props) => {
 
         <div className="flex flex-wrap gap-10 mt-7 w-full">
           {similarProducts.map((product) => (
-            <ProductCard key={product._id} product={product} />
+            <ProductCardtCard key={product._id} product={product} />
           ))}
         </div>
       </div>
