@@ -5,6 +5,8 @@ import Link from "next/link";
 import { formatNumber } from "@/lib/utils";
 import PriceInfoCard from "@/components/PriceInfoCard";
 import Modal from "@/components/Modal";
+import ProductCard from "@/components/ProductCard";
+import { redirect } from "next/navigation";
 
 
 
@@ -186,7 +188,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
 
         <div className="flex flex-wrap gap-10 mt-7 w-full">
           {similarProducts.map((product) => (
-            <ProductCardtCard key={product._id} product={product} />
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </div>
