@@ -95,9 +95,6 @@ const transporter = nodemailer.createTransport({
   logger: true,
   maxConnections: 1
 })
-console.log(process.env.EMAIL_USERNAME);
-console.log(process.env.EMAIL_PASSWORD);
-
 
 export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) => {
   const mailOptions = {
