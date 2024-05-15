@@ -28,7 +28,6 @@
 This repository contains the code corresponding to an in-depth understanding on webscrapping and tracking prices on an e-commerce website.
 
 ![image info](./pictures/Screenshot_2024-05-03_00_41_55.png)
-Screenshot_2024-05-03_00_41_55.png
 
 ## <a name="introduction">🤖 Introduction</a>
 
